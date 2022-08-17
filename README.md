@@ -4,3 +4,21 @@
 У легкового автомобиля добавьте параметр количество перевозимых пассажиров. На основе данного параметра может изменяться запас хода. Предусмотрите проверку на допустимое количество пассажиров. Каждый дополнительный пассажир уменьшает запас хода на дополнительные 6%. 
 
 Класс грузового автомобиля дополните параметром грузоподъемность. Также, как и у легкового автомобиля, грузоподъемность влияет на запас хода автомобиля. Дополните класс проверкой может ли автомобиль принять полный груз на борт. Каждые дополнительные 200кг веса уменьшают запас хода на 4%.
+
+
+CREATE TABLE #Customers
+(  
+Id int IDENTITY(1,1),  
+ Name varchar (20),  
+); 
+CREATE TABLE #Orders
+(  
+Id int IDENTITY(1,1),  
+ CustomerId int,  
+);
+INSERT INTO #Customers (Name) Values ('Max'),('Pavel'),('Ivan'),('Leonid');
+INSERT INTO #Orders (CustomerId) Values (2),(4);
+Select 
+	#Customers.Name as Customers 
+from #Customers
+where #Customers.Id NOT IN (select CustomerId from #Orders);
