@@ -27,9 +27,6 @@ namespace Auto_Interview
                         break;
                 }
             }
-            
-           
-            
         }
     }
 }

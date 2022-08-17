@@ -18,13 +18,9 @@ namespace Auto_Interview
         }
         public void GetAuto()
         {
-          
             Console.WriteLine(speed+" "+ type);
-
         }
-        public override double GetPossibleDistance(bool full, double fuel)
-        {
-            return (full) ? fuelTank / averageFuelConsuming * 100 : fuel / averageFuelConsuming * 100;
-        }
+        public override double GetPossibleDistance(bool full, double fuel) => (full) ? fuelTank / averageFuelConsuming * 100 : fuel / averageFuelConsuming * 100;
+       
     }
 }

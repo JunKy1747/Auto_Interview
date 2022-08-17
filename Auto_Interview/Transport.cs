@@ -18,10 +18,8 @@ namespace Auto_Interview
             speed = _speed;
             countPeople = _countPeople;
             countSpot = _countSpot;
-
         }
-      
-      
+ 
         public override double GetPossibleDistance(bool full, double fuel)
         {
             return (full) ? (fuelTank / averageFuelConsuming * 100)*(1-(countPeople*0.06f)) : (fuel / averageFuelConsuming * 100) * (1 - (countPeople * 0.06f));

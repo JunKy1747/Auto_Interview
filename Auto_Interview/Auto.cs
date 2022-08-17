@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 namespace Auto_Interview
 {  
     public enum TypeOfAuto
-{
-    sportcar = 0,
-    truck= 1,
-    passengerCar = 2
-} 
+    {
+        sportcar = 0,
+        truck= 1,
+        passengerCar = 2
+    } 
     public  class Auto
     {
         protected TypeOfAuto type;
@@ -33,15 +33,9 @@ namespace Auto_Interview
         {
 
         }
-        public virtual double GetPossibleDistance(bool full, double fuel)
-        {
-            return (full) ? fuelTank/averageFuelConsuming*100 : fuel/averageFuelConsuming*100;
-        }
-        public double GetTime( double distance)
-        {
-            
-            return distance / speed;
-        }
+        public virtual double GetPossibleDistance(bool full, double fuel)=>(full) ? fuelTank/averageFuelConsuming*100 : fuel/averageFuelConsuming*100;
+        
+        public double GetTime( double distance) =>  distance / speed;
        
     }
 }

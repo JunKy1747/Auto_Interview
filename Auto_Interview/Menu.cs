@@ -17,7 +17,6 @@ namespace Auto_Interview
             Console.WriteLine(@"1. Текущая информация о состоянии запаса хода
 2. Расчет времени на растояние");
             return Convert.ToInt32(Console.ReadLine());
-
         }
         public static void GetTime(object auto)
         {
@@ -46,9 +45,8 @@ namespace Auto_Interview
                 do {
                     Console.Clear();
                     Console.WriteLine($"Введите количество топлива ( не больше {max})");
-                    
                     fuel = Convert.ToDouble(Console.ReadLine());
-                }while (fuel > max) ;
+                }while (fuel > max);
             }
             object[] par = new object[] { full, fuel };
             MethodInfo m = auto.GetType().GetMethod("GetPossibleDistance");
@@ -65,8 +63,6 @@ namespace Auto_Interview
             {
                 case 1:
                     auto =  SetSportcar();
-                    //MethodInfo m= auto.GetType().GetMethod("");
-                    //m.Invoke(auto, null);
                     break;
                 case 2:
                     auto= SetTransport();
